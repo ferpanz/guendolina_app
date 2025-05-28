@@ -29,37 +29,36 @@ const Pedidos = () => {
     );
   }
 
-  const handleSumar = idx => {
-    setCantidades(cantidades.map((c, i) => i === idx ? c + 1 : c));
+  const botonSumar = id => {
+    setCantidades(cantidades.map((c, i) => i === id ? c + 1 : c));
   };
 
-  const handleRestar = idx => {
-    setCantidades(cantidades.map((c, i) => i === idx && c > 0 ? c - 1 : c));
+  const botonRestar = id => {
+    setCantidades(cantidades.map((c, i) => i === id && c > 0 ? c - 1 : c));
   };
 
   return (
     <div className="container">
-      <h1 className="text-center mt-1 mb-3">Detalles del Pedido</h1>
+      <h1 className="text-center mt-1 mb-3">Estilo selecionado</h1>
       <div className='row justify-content-center'>
-        <div className='col-12 col-md-6 mb-3'>
+        <div className='col-12 col-md-6 mb-2'>
           <CardEstilo
             imagen={state.imagen}
             titulo={state.titulo}
-            descripcion={state.descripcion}
             mostrarBtn={false}
           />
         </div>
       </div>
-      <h2 className="text-center mt-4 mb-2">Selecciona los barriles</h2>
+      <h2 className="text-center mt-1 mb-2">Selecciona los barriles</h2>
       <div className="row justify-content-center">
-        {barriles.map((barril, idx) => (
-          <div className="col-12 col-md-4" key={barril.id}>
+        {barriles.map((barril, id) => (
+          <div className="col-12 col-md-4 mb-2" key={barril.id}>
             <CardBarril
               imagen={barril.imagen}
               titulo={barril.titulo}
-              cantidad={cantidades[idx]}
-              onSumar={() => handleSumar(idx)}
-              onRestar={() => handleRestar(idx)}
+              cantidad={cantidades[id]}
+              sumar={() => botonSumar(id)}
+              restar={() => botonRestar(id)}
             />
           </div>
         ))}

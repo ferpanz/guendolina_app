@@ -43,7 +43,7 @@ const Estilos = () => {
       <h1 className="text-center mt-1 mb-3">Nuestros Estilos</h1>
       <div className="row justify-content-center">
         {estilos.map((estilo, id) => (
-          <div className="col-12 col-md-6 mb-3" key={id}>
+          <div className="col-12 col-md-6 mb-2" key={id}>
             <CardEstilo {...estilo} />
           </div>
         ))}

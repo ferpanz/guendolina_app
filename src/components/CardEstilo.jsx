@@ -5,7 +5,7 @@ const CardEstilo = ({ imagen, titulo, descripcion, mostrarBtn }) => {
   const estilo = { imagen, titulo, descripcion };
 
   return (
-    <div className="card h-100">
+    <div className="card h-100 bg-success-subtle">
       <div className="row g-0 align-items-center flex-nowrap">
         <div className="col-auto">
           <img src={imagen} className="img-fluid rounded-start" alt={titulo} style={{ width: 100, height: 100, objectFit: 'cover' }} />
