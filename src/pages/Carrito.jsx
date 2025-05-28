@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCarrito } from '../context/CarritoContext'
 import CardCarrito from '../components/CardCarrito'
+import BtnCarritoConfirm from '../components/BtnCarritoConfirm'
 
 const Carrito = () => {
   const { carrito } = useCarrito()
@@ -21,8 +22,11 @@ const Carrito = () => {
               <CardCarrito {...pedido} />
             </div>
           ))}
+          <BtnCarritoConfirm />
         </div>
+        
       )}
+      
     </div>
   )
 }
