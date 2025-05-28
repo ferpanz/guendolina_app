@@ -22,10 +22,13 @@ const Carrito = () => {
               <CardCarrito {...pedido} />
             </div>
           ))}
-          <BtnCarritoConfirm />
+          <div>
+            <BtnCarritoConfirm />
+          </div>
         </div>
         
       )}
+      
       
     </div>
   )
