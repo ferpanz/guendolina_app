@@ -5,6 +5,7 @@ import CardBarril from '../components/CardBarril'
 import barril15 from '../assets/barril15.jpg'
 import barril30 from '../assets/barril30.jpg'
 import barril50 from '../assets/barril50.jpg'
+import BtnMasPedidos from '../components/BtnMasPedidos'
 
 const barriles = [
   { id: 1, imagen: barril15, titulo: 'Barril 15L' },
@@ -59,6 +60,11 @@ const Pedidos = () => {
           </div>
         ))}
       </div>
+      <BtnMasPedidos
+      estilo={state}
+      cantidades={cantidades}
+      barriles={barriles}
+    />
     </div>
   )
 }
