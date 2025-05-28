@@ -29,12 +29,9 @@ const Pedidos = () => {
     );
   }
 
-  const botonSumar = id => {
-    setCantidades(cantidades.map((c, i) => i === id ? c + 1 : c));
-  };
-
-  const botonRestar = id => {
-    setCantidades(cantidades.map((c, i) => i === id && c > 0 ? c - 1 : c));
+  // Función para actualizar la cantidad de un barril específico
+  const actualizarCantidad = (id, nuevaCantidad) => {
+    setCantidades(cantidades.map((c, i) => i === id ? nuevaCantidad : c));
   };
 
   return (
@@ -57,8 +54,7 @@ const Pedidos = () => {
               imagen={barril.imagen}
               titulo={barril.titulo}
               cantidad={cantidades[id]}
-              sumar={() => botonSumar(id)}
-              restar={() => botonRestar(id)}
+              setCantidad={nuevaCantidad => actualizarCantidad(id, nuevaCantidad)}
             />
           </div>
         ))}
