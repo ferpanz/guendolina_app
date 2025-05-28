@@ -1,8 +1,8 @@
 import React from 'react'
 
 const BtnCantidad = ({ cantidad, setCantidad }) => {
-  const sumar = () => setCantidad(cantidad + 1)
-  const restar = () => {
+  const agregar = () => setCantidad(cantidad + 1)
+  const quitar = () => {
     if (cantidad > 0) setCantidad(cantidad - 1)
   }
 
@@ -10,13 +10,13 @@ const BtnCantidad = ({ cantidad, setCantidad }) => {
     <div className="d-flex align-items-center justify-content-center gap-2">
       <button
         className="btn btn-danger btn-sm"
-        onClick={restar}
+        onClick={quitar}
         disabled={cantidad === 0}
       >-</button>
       <span className="fw-bold">{cantidad}</span>
       <button
         className="btn btn-success btn-sm"
-        onClick={sumar}
+        onClick={agregar}
       >+</button>
     </div>
   )
