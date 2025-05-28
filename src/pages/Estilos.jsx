@@ -1,8 +1,8 @@
 import React from 'react'
-import honey from '../assets/HONEY.png'
-import blonde from '../assets/BLONDE ALE.png'
-import irish from '../assets/IRISH RED.png'
-import ipa from '../assets/SESSION IPA.png'
+import honey from '../assets/honey.png'
+import blonde from '../assets/blonde-ale.png'
+import irish from '../assets/irish-red.png'
+import ipa from '../assets/session-ipa.png'
 import CardEstilo from '../components/CardEstilo'
 
 const estilos = [
