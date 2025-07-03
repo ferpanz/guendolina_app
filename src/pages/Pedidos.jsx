@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import CardEstilo from '../components/CardEstilo'
 import CardBarril from '../components/CardBarril'
-import barril15 from '../assets/barril15.jpg'
+import barril20 from '../assets/barril20.jpg'
 import barril30 from '../assets/barril30.jpg'
 import barril50 from '../assets/barril50.jpg'
 import BtnMasPedidos from '../components/BtnMasPedidos'
 
 const barriles = [
-  { id: 1, imagen: barril15, titulo: 'Barril 15L' },
+  { id: 1, imagen: barril20, titulo: 'Barril 20L' },
   { id: 2, imagen: barril30, titulo: 'Barril 30L' },
   { id: 3, imagen: barril50, titulo: 'Barril 50L' },
 ]
