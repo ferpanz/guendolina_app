@@ -15,14 +15,14 @@ const estilos = [
   },
   {
     id:2,
-    imagen: honey,
+    imagen: irish,
     titulo: 'IRISH RED',
     descripcion: 'Con tonos de miel y dulzura, esta cerveza es una explosión de sabor con un toque de caramelo.',
     mostrarBtn: true,
   },
   {
     id: 3,
-    imagen: irish,
+    imagen: honey,
     titulo: 'HONEY',
     descripcion: 'Suave como BLONDE ALE con el dulzor justo que le da la miel más natural.',
     mostrarBtn: true,
