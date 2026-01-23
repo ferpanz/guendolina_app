@@ -8,6 +8,7 @@ const NavBar = () => {
         <NavLink to='/' className='btn btn-outline-light'><i className='bi bi-house'></i> Estilos</NavLink>
         <NavLink to='/pedidos' className='btn btn-outline-light'><i className="bi bi-card-checklist"></i> Pedidos</NavLink>
         <NavLink to='/carrito' className='btn btn-outline-light'><i className="bi bi-cart"></i> Carrito</NavLink>
+        <NavLink to='/admin' className='btn btn-outline-light'><i className="bi bi-gear-fill"></i> Admin</NavLink>
       </div>
     </div>
   )
