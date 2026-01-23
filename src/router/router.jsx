@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Estilos from "../pages/Estilos";
 import Pedidos from "../pages/Pedidos";
 import Carrito from "../pages/Carrito";
+import Admin from "../pages/Admin";
 import Layout from "../layout/Layout";
 import NotFound from "../pages/NotFound";
 
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
             {
                 path: "/carrito",
                 element: <Carrito />,
+            },
+            {
+                path: "/admin",
+                element: <Admin />,
             },
         ],
     },
