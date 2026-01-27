@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Admin = () => {
+const AdminStyles = () => {
   const [styles, setStyles] = useState([]);
   const [formData, setFormData] = useState({
     'name-style': '',
@@ -207,7 +207,7 @@ const Admin = () => {
                   <th>ID</th>
                   <th>Nombre</th>
                   <th>Descripción</th>
-                  <th>Imagen</th>
+                  
                   <th>Estado</th>
                   <th>Acciones</th>
                 </tr>
@@ -225,7 +225,7 @@ const Admin = () => {
                       <td>{style.id}</td>
                       <td><strong>{style['name-style']}</strong></td>
                       <td>{style.description.substring(0, 50)}...</td>
-                      <td>{style.image}</td>
+                      
                       <td>
                         <span className={`badge ${style.status ? 'bg-success' : 'bg-danger'}`}>
                           {style.status ? 'Activo' : 'Inactivo'}
@@ -257,4 +257,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default AdminStyles;
