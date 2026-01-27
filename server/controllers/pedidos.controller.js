@@ -3,17 +3,27 @@ import pool from '../config/db.js';
 export const getAllPedidos = async (req, res) => {
   try {
     const connection = await pool.getConnection();
-    const [rows] = await connection.query('SELECT * FROM pedidos ORDER BY fecha_pedido DESC');
+    const [rows] = await connection.query(
+      'SELECT p.id_pedido, p.usuario_id, p.detalles, p.total, p.estado, p.fecha_pedido, u.`user-name` as nombre_usuario FROM pedidos p LEFT JOIN users u ON p.usuario_id = u.idusers ORDER BY p.fecha_pedido DESC'
+    );
     connection.release();
     res.json(rows);
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error fetching pedidos' });
+    console.error('Error en getAllPedidos:', error.message);
+    res.status(500).json({ error: 'Error fetching pedidos', details: error.message });
   }
 };
 
 export const createPedido = async (req, res) => {
   const { usuario_id, detalles, total, estado } = req.body;
+
+  // Validar que los campos requeridos existan
+  if (!usuario_id || detalles === undefined || total === undefined) {
+    return res.status(400).json({ 
+      error: 'Faltan campos requeridos',
+      received: { usuario_id, detalles, total, estado }
+    });
+  }
 
   try {
     const connection = await pool.getConnection();
@@ -24,8 +34,11 @@ export const createPedido = async (req, res) => {
     connection.release();
     res.status(201).json({ message: 'Pedido creado' });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error creating pedido' });
+    console.error('Error creating pedido:', error);
+    res.status(500).json({ 
+      error: 'Error creating pedido',
+      details: error.message
+    });
   }
 };
 

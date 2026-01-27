@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import GU from '../assets/Gu.png'
+import horizontal from '../assets/horizontal.png'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -31,11 +33,24 @@ const Login = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="card shadow-lg" style={{ maxWidth: '400px', width: '100%' }}>
+    <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100 bg-success-subtle">
+      <div className="card shadow-lg bg-success" style={{ maxWidth: '400px', width: '100%' }}>
         <div className="card-body p-5">
-          <h1 className="text-center mb-4">🍺 Guendolina</h1>
-          <h5 className="text-center mb-4 text-muted">Iniciar Sesión</h5>
+          <div className="d-flex align-items-center justify-content-center">
+                      <img
+                        src={GU}
+                        alt="Logo"
+                        style={{ width: 'auto', height: '80px', marginRight: '5px' }}
+                        className="img-fluid"
+                      />
+                      <img
+                        src={horizontal}
+                        alt="Logo"
+                        style={{ width: 'auto', height: '70px' }}
+                        className="img-fluid  d-sm-inline"
+                      />
+                    </div>
+          <h5 className="text-center mt-3 mb-4 text-muted">Iniciar Sesión</h5>
 
           {error && (
             <div className="alert alert-danger alert-dismissible fade show" role="alert">
@@ -75,7 +90,7 @@ const Login = () => {
 
             <button
               type="submit"
-              className="btn btn-primary w-100"
+              className="btn btn-primary w-100 mt-4"
               disabled={loading}
             >
               {loading ? 'Cargando...' : 'Iniciar Sesión'}
